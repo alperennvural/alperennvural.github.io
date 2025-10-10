@@ -3,55 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakarya Üniversitesi - Elektrik Elektronik Mühendisliği Web Sitesi</title>
+    <title>Alperen Vural | Kişisel Sayfa</title>
     <style>
+        /* Genel Stil Ayarları */
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #121212; /* Koyu arka plan */
+            color: #e0e0e0; /* Açık renk metin */
             line-height: 1.6;
         }
-        h1 {
-            color: #0056b3;
-        }
-        p {
-            margin-bottom: 10px;
-        }
         .container {
-            max-width: 800px;
+            max-width: 960px;
             margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            padding: 0 20px;
         }
+        /* Header (Üst Kısım) ve Navigasyon */
+        header {
+            background: #1f1f1f;
+            color: #fff;
+            padding: 1rem 0;
+            border-bottom: 3px solid #007bff; /* Mavi ayraç çizgisi */
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        /* Ana Giriş Ekranı (Showcase) */
+        #showcase {
+            min-height: 400px;
+            background: #1f1f1f url('https://via.placeholder.com/1500x800') no-repeat center center/cover; /* Arka plan resmi için geçici bir görsel */
+            text-align: center;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #showcase h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px #000;
+        }
+        #showcase p {
+            font-size: 20px;
+            text-shadow: 1px 1px 2px #000;
+        }
+        /* Bölümler (Hakkımda, Projeler vb.) */
+        .bolum {
+            padding: 40px 0;
+            border-bottom: 1px solid #333;
+        }
+        .bolum h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        /* Buton Stili */
         .button {
             display: inline-block;
             background-color: #007bff;
             color: white;
-            padding: 10px 15px;
+            padding: 12px 20px;
             text-decoration: none;
             border-radius: 5px;
             margin-top: 20px;
+            transition: background-color 0.3s;
         }
         .button:hover {
             background-color: #0056b3;
         }
+        /* Footer (Alt Kısım) */
+        footer {
+            background: #1f1f1f;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Sakarya Üniversitesi - Elektrik Elektronik Mühendisliği</h1>
-        <p>
-            Bu, Sakarya Üniversitesi bünyesindeki Elektrik Elektronik Mühendisliği'nin GitHub Pages üzerindeki resmi web sitesidir.
-            Burada bölümümüzle ilgili duyuruları, projeleri, etkinlikleri ve önemli bilgileri bulabilirsiniz.
-        </p>
-        <p>
-            Amacımız, öğrencilerimiz ve akademisyenlerimiz için bir bilgi kaynağı sağlamak ve çalışmalarımızı dış dünyaya tanıtmaktır.
-        </p>
-        <p>Yakında daha fazla içerik eklenecektir!</p>
-        <a href="https://github.com/alperennvural" class="button">GitHub Profilime Git</a>
-    </div>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><a href="#">Bölüm Adı / Okul Adı</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#">Ana Sayfa</a></li>
+                    <li><a href="#">Hakkımda</a></li>
+                    <li><a href="#">Projelerim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Okul ve Bölüm Projelerime Hoş Geldiniz</h1>
+            <p>Bu sitede öğrenim hayatım boyunca yaptığım çalışmaları ve projeleri bulabilirsiniz.</p>
+        </div>
+    </section>
+
+    <section id="hakkimda" class="bolum">
+        <div class="container">
+            <h2>Hakkımda</h2>
+            <p>
+                Ben [Okul Adı] Üniversitesi, [Bölüm Adı] bölümü öğrencisiyim.
+                Yazılım geliştirme, yapay zeka ve siber güvenlik alanlarına ilgi duyuyorum.
+                Bu web sitesini, öğrendiklerimi uygulamak ve projelerimi sergilemek amacıyla oluşturdum.
+            </p>
+            <div style="text-align: center;">
+                 <a href="https://github.com/alperennvural" class="button">GitHub Profilimi Ziyaret Et</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; 2025, Alperen Vural</p>
+    </footer>
+
 </body>
 </html>
