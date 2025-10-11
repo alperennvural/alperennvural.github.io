@@ -244,23 +244,23 @@
                         <h4>Tasarım ve Simülasyon Araçları</h4>
                         <div class="yetenek">
                             <p>MATLAB / Simulink</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 85%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="90%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>Proteus (ISIS/ARES)</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="95%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>Altium / Eagle</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 80%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="80%"></div></div>
                         </div>
                          <div class="yetenek">
                             <p>PSpice</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 70%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="85%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>AutoCAD</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 75%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="80%"></div></div>
                         </div>
                     </div>
 
@@ -268,19 +268,19 @@
                         <h4>Programlama Dilleri</h4>
                         <div class="yetenek">
                             <p>C / C++</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="80%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>Python</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 80%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="90%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>VHDL</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 70%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="90%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>Assembly</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 65%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="85%"></div></div>
                         </div>
                     </div>
                     
@@ -288,23 +288,23 @@
                         <h4>Temel Yetkinlikler</h4>
                         <div class="yetenek">
                             <p>Gömülü Sistemler</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 95%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="90%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>PLC</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="85%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>PCB Tasarımı</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 85%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="75%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>Mikroişlemciler</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 85%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="80%"></div></div>
                         </div>
                         <div class="yetenek">
                             <p>Entegre Devre Tasarımı</p>
-                            <div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 70%;"></div></div>
+                            <div class="yetenek-seviyesi-doldur" style="width: 0%;" data-width="80%"></div></div>
                         </div>
                     </div>
                 </div>
@@ -352,6 +352,20 @@
         duration: 1000,
         easing: 'ease-in-out'
     });
+    // Yetenek Barlarını Canlandırmak için
+        ScrollReveal().reveal('.yetenekler', {
+            delay: 200,
+            distance: '0px', // Barların kendisi hareket etmesin
+            opacity: 1,      // Sadece görünür olsunlar
+            beforeReveal: (el) => {
+                const barlar = el.querySelectorAll('.yetenek-seviyesi-doldur');
+                barlar.forEach(bar => {
+                    const hedefGenislik = bar.getAttribute('data-width');
+                    bar.style.transition = 'width 1.5s ease-in-out'; // Animasyon süresi ve şekli
+                    bar.style.width = hedefGenislik;
+                });
+            }
+        });    
 </script>
 </body>
 </html>
