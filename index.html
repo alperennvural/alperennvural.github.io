@@ -5,205 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alperen Vural | Kişisel Sayfa</title>
     <style>
-    /* Genel Stil Ayarları */
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        background-color: #121212;
-        color: #e0e0e0;
-        line-height: 1.6;
-    }
-    .container {
-        max-width: 960px;
-        margin: auto;
-        overflow: hidden;
-        padding: 0 20px;
-    }
-
-    /* Header (Üst Kısım) ve Navigasyon */
-    header {
-        background: #1f1f1f;
-        color: #fff;
-        padding: 1rem 0;
-        border-bottom: 3px solid #007bff;
-    }
-    header a {
-        color: #fff;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 16px;
-    }
-    header ul {
-        padding: 0;
-        list-style: none;
-    }
-    header li {
-        display: inline;
-        padding: 0 20px 0 20px;
-    }
-    header #branding {
-        float: left;
-    }
-    header #branding h1 {
-        margin: 0;
-    }
-    header nav {
-        float: right;
-        margin-top: 10px;
-    }
-
-    /* Ana Giriş Ekranı (Showcase) */
-    #showcase {
-        position: relative;
-        min-height: 400px;
-        background: url('images/arkaplan.jpg') no-repeat center center/cover;
-        text-align: center;
-        color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-    }
-    #showcase::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        z-index: -1;
-    }
-    #showcase h1 {
-        font-size: 55px;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px #000;
-    }
-    #showcase h1::after {
-        content: '|';
-        margin-left: 5px;
-        opacity: 1;
-        animation: yanip-sonme 0.7s infinite;
-    }
-    @keyframes yanip-sonme {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-    #showcase p {
-        font-size: 20px;
-        text-shadow: 1px 1px 2px #000;
-    }
-
-    /* Genel Bölüm Stilleri */
-    .bolum {
-        padding: 40px 0;
-        border-bottom: 1px solid #333;
-    }
-    .bolum h2 {
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 20px;
-        color: #007bff;
-    }
-
-/* -- Hakkımda Bölümü YENİ DENGELİ Stilleri -- */
-.hakkimda-icerik {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-    margin-top: 30px;
-}
-.profil-resmi {
-    flex: 1; /* Sütun genişliğini esnek yap */
-    max-width: 250px; /* Maksimum genişliği belirle */
-    text-align: center;
-}
-.profil-resmi img {
-    max-width: 100%; /* İçinde bulunduğu sütuna tamamen uysun */
-    border-radius: 20px; /* Yumuşak köşeli kare yapar */
-    border: 5px solid #007bff;
-}
-}
- .profil-resmi .button {
-    margin-top: 20px; /* Butonun üstüne 20 piksellik bir boşluk ekler */
-.hakkimda-metin {
-    flex: 2.5; /* Metin ve yetenekler sütununu daha geniş yap */
-}
-
-/* -- Yetenek Barları YENİ 3 SÜTUNLU Yapısı -- */
-.yetenekler {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 adet eşit genişlikte sütun oluştur */
-    gap: 20px 30px; /* Sütunlar arası boşluğu biraz azalt */
-    margin-top: 30px;
-}
-.yetenekler h3 {
-    grid-column: 1 / -1;
-    margin-bottom: 0;
-}
-
-/* Telefon gibi 900px'den dar ekranlar için */
-@media (max-width: 900px) {
-    .yetenekler {
-        grid-template-columns: repeat(2, 1fr); /* Sütun sayısını 2'ye düşür */
-    }
-}
-
-/* Telefon gibi 900px'den dar ekranlar için */
-@media (max-width: 900px) {
-    .yetenekler {
-        grid-template-columns: repeat(2, 1fr); /* Sütun sayısını 2'ye düşür */
-    }
-}
-    .yetenek-kategorisi h4 {
-        color: #007bff;
-        margin-bottom: 15px;
-        border-bottom: 1px solid #333;
-        padding-bottom: 5px;
-    }
-    .yetenek {
-        margin-bottom: 15px;
-    }
-    .yetenek p {
-        margin: 0 0 5px 0;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
-    .yetenek-bar {
-        background-color: #333;
-        border-radius: 5px;
-        padding: 3px;
-        box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
-    }
-    .yetenek-seviyesi {
-        height: 12px;
-        background-color: #007bff;
-        border-radius: 3px;
-    }
-
-    /* Telefon Ekranları İçin Ayar */
-    @media (max-width: 768px) {
-        .hakkimda-icerik {
-            flex-direction: column;
-            align-items: center;
-        }
-        .yetenekler {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    /* Footer (Alt Kısım) */
-    footer {
-        background: #1f1f1f;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-        margin-top: 20px;
-    }
-
-</style>
+        /* Genel Stil Ayarları */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #121212; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 960px; margin: auto; overflow: hidden; padding: 0 20px; }
+        /* Header */
+        header { background: #1f1f1f; color: #fff; padding: 1rem 0; border-bottom: 3px solid #007bff; }
+        header a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 16px; }
+        header ul { padding: 0; list-style: none; }
+        header li { display: inline; padding: 0 20px; }
+        header #branding { float: left; }
+        header #branding h1 { margin: 0; }
+        header nav { float: right; margin-top: 10px; }
+        /* Showcase */
+        #showcase { position: relative; min-height: 400px; background: url('images/arkaplan.jpg') no-repeat center center/cover; text-align: center; color: #ffffff; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1; }
+        #showcase::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: -1; }
+        #showcase h1 { font-size: 55px; margin-bottom: 10px; text-shadow: 2px 2px 4px #000; }
+        #showcase h1::after { content: '|'; margin-left: 5px; opacity: 1; animation: yanip-sonme 0.7s infinite; }
+        @keyframes yanip-sonme { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #showcase p { font-size: 20px; text-shadow: 1px 1px 2px #000; }
+        /* Genel Bölüm Stilleri */
+        .bolum { padding: 40px 0; border-bottom: 1px solid #333; }
+        .bolum h2 { text-align: center; font-size: 30px; margin-bottom: 20px; color: #007bff; }
+        /* Button Stili */
+        .button { display: inline-block; background-color: #007bff; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; transition: background-color 0.3s; }
+        .button:hover { background-color: #0056b3; }
+        /* Hakkımda Bölümü - MÜKEMMEL HALİ */
+        .hakkimda-icerik { display: flex; align-items: flex-start; gap: 50px; margin-top: 30px; }
+        .profil-resmi { flex: 1; max-width: 250px; text-align: center; }
+        .profil-resmi img { max-width: 100%; border-radius: 20px; border: 5px solid #007bff; }
+        .profil-resmi .button { margin-top: 20px; }
+        .hakkimda-metin { flex: 2.5; }
+        /* Yetenekler 3 Sütunlu Yapı */
+        .yetenekler { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 30px; margin-top: 30px; }
+        .yetenekler h3 { grid-column: 1 / -1; margin-bottom: 0; }
+        .yetenek-kategorisi h4 { color: #007bff; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .yetenek { margin-bottom: 15px; }
+        .yetenek p { margin: 0 0 5px 0; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
+        .yetenek-bar { background-color: #333; border-radius: 5px; padding: 3px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.2); }
+        .yetenek-seviyesi { height: 12px; background-color: #007bff; border-radius: 3px; }
+        /* Responsive Ayarlar */
+        @media (max-width: 900px) { .yetenekler { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .hakkimda-icerik { flex-direction: column; align-items: center; } .yetenekler { grid-template-columns: 1fr; } }
+        /* Footer */
+        footer { background: #1f1f1f; color: #fff; text-align: center; padding: 20px; margin-top: 20px; }
+    </style>
 </head>
 <body>
     <header class="reveal-tepeden">
@@ -229,99 +74,75 @@
     </section>
 
     <section id="hakkimda" class="bolum reveal-efekti">
-    <div class="container">
-        <h2>Hakkımda</h2>
-        <div class="hakkimda-icerik">
-            
-            <div class="profil-resmi">
-    <img src="images/profil.jpg" alt="Alperen Vural Profil Fotoğrafı">
-    
-    <a href="https://github.com/alperennvural" class="button">GitHub Profilim</a>
-</div>
-
+        <div class="container">
+            <h2>Hakkımda</h2>
             <div class="hakkimda-icerik">
+                
+                <div class="profil-resmi">
+                    <img src="images/profil.jpg" alt="Alperen Vural Profil Fotoğrafı">
+                    <a href="https://github.com/alperennvural" class="button">GitHub Profilim</a>
+                </div>
     
-    <div class="profil-resmi">
-        <img src="images/profil.jpg" alt="Alperen Vural Profil Fotoğrafı">
-        <a href="https://github.com/alperennvural" class="button">GitHub Profilim</a>
-    </div>
-
-    <div class="hakkimda-metin">
-        <p>
-            Sakarya Üniversitesi Elektrik-Elektronik Mühendisliği öğrencisiyim. Gömülü sistemlerden endüstriyel otomasyona kadar, elektroniğin problem çözme gücüne ve potansiyeline büyük bir ilgi duyuyorum. Bu web sitesini, öğrendiklerimi uygulamak ve projelerimi sergilemek amacıyla oluşturdum.
-        </p>
-        
-        <div class="yetenekler">
-            <h3>Teknik Yetkinlikler</h3>
-            
-            <div class="yetenek-kategorisi">
-                <h4>Tasarım ve Simülasyon Araçları</h4>
-                <div class="yetenek"><p>MATLAB / Simulink</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 85%;"></div></div></div>
-                <div class="yetenek"><p>Proteus (ISIS/ARES)</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div></div>
-                <div class="yetenek"><p>Altium / Eagle</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 80%;"></div></div></div>
-                 <div class="yetenek"><p>PSpice</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 70%;"></div></div></div>
-                <div class="yetenek"><p>AutoCAD</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 75%;"></div></div></div>
-            </div>
-
-            <div class="yetenek-kategorisi">
-                <h4>Programlama Dilleri</h4>
-                <div class="yetenek"><p>C / C++</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div></div>
-                <div class="yetenek"><p>Python</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 80%;"></div></div></div>
-                <div class="yetenek"><p>VHDL</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 70%;"></div></div></div>
-                <div class="yetenek"><p>Assembly</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 65%;"></div></div></div>
-            </div>
-            
-            <div class="yetenek-kategorisi">
-                <h4>Temel Yetkinlikler</h4>
-                <div class="yetenek"><p>Gömülü Sistemler</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 95%;"></div></div></div>
-                <div class="yetenek"><p>PLC</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div></div>
-                <div class="yetenek"><p>PCB Tasarımı</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 85%;"></div></div></div>
-                <div class="yetenek"><p>Mikroişlemciler</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 85%;"></div></div></div>
-                <div class="yetenek"><p>Entegre Devre Tasarımı</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 70%;"></div></div></div>
+                <div class="hakkimda-metin">
+                    <p>
+                        Sakarya Üniversitesi Elektrik-Elektronik Mühendisliği öğrencisiyim. Gömülü sistemlerden endüstriyel otomasyona kadar, elektroniğin problem çözme gücüne ve potansiyeline büyük bir ilgi duyuyorum. Bu web sitesini, öğrendiklerimi uygulamak ve projelerimi sergilemek amacıyla oluşturdum.
+                    </p>
+                    
+                    <div class="yetenekler">
+                        <h3>Teknik Yetkinlikler</h3>
+                        
+                        <div class="yetenek-kategorisi">
+                            <h4>Tasarım ve Simülasyon Araçları</h4>
+                            <div class="yetenek"><p>MATLAB / Simulink</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 95%;"></div></div></div>
+                            <div class="yetenek"><p>Proteus (ISIS/ARES)</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div></div>
+                            <div class="yetenek"><p>Altium / Eagle</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 80%;"></div></div></div>
+                            <div class="yetenek"><p>PSpice</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div></div>
+                            <div class="yetenek"><p>AutoCAD</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 75%;"></div></div></div>
+                        </div>
+    
+                        <div class="yetenek-kategorisi">
+                            <h4>Programlama Dilleri</h4>
+                            <div class="yetenek"><p>C / C++</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 80%;"></div></div></div>
+                            <div class="yetenek"><p>Python</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div></div>
+                            <div class="yetenek"><p>VHDL</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div></div>
+                            <div class="yetenek"><p>Assembly</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 75%;"></div></div></div>
+                        </div>
+                        
+                        <div class="yetenek-kategorisi">
+                            <h4>Temel Yetkinlikler</h4>
+                            <div class="yetenek"><p>Gömülü Sistemler</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 95%;"></div></div></div>
+                            <div class="yetenek"><p>PLC</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 90%;"></div></div></div>
+                            <div class="yetenek"><p>PCB Tasarımı</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 85%;"></div></div></div>
+                            <div class="yetenek"><p>Mikroişlemciler</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 85%;"></div></div></div>
+                            <div class="yetenek"><p>Entegre Devre Tasarımı</p><div class="yetenek-bar"><div class="yetenek-seviyesi" style="width: 75%;"></div></div></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-    <footer>
-        <p>Copyright &copy; 2025, Alperen Vural</p>
+    </section>
+
     <footer class="reveal-efekti">
-    <script>
-    const baslikElementi = document.getElementById('ana-baslik');
-    const metin = "Okul ve Bölüm Projelerime Hoş Geldiniz."; // Animasyonla yazılacak metin
-    let karakterIndex = 0;
+        <p>Copyright &copy; 2025, Alperen Vural</p>
+    </footer>
 
-    function yaziYaz() {
-        if (karakterIndex < metin.length) {
-            baslikElementi.innerHTML += metin.charAt(karakterIndex);
-            karakterIndex++;
-            setTimeout(yaziYaz, 100); // Yazım hızı (milisaniye)
+    <script>
+        const baslikElementi = document.getElementById('ana-baslik');
+        const metin = "Teknoloji Projelerime Hoş Geldiniz.";
+        let karakterIndex = 0;
+        function yaziYaz() {
+            if (karakterIndex < metin.length) {
+                baslikElementi.innerHTML += metin.charAt(karakterIndex);
+                karakterIndex++;
+                setTimeout(yaziYaz, 100);
+            }
         }
-    }
-
-    // Sayfa yüklendiğinde animasyonu başlat
-    document.addEventListener('DOMContentLoaded', yaziYaz);
-</script>
-<script src="https://unpkg.com/scrollreveal"></script>
+        document.addEventListener('DOMContentLoaded', yaziYaz);
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-    ScrollReveal().reveal('.reveal-efekti', {
-        delay: 200,
-        distance: '50px',
-        origin: 'bottom',
-        opacity: 0,
-        duration: 1000,
-        easing: 'ease-in-out'
-    });
-
-    // 1. ADIMDA EKLEYECEĞİN YENİ KOD BU (Header için)
-    ScrollReveal().reveal('.reveal-tepeden', {
-        delay: 200,
-        distance: '50px',
-        origin: 'top', // Yönü 'top' olarak değiştirildi
-        opacity: 0,
-        duration: 1000,
-        easing: 'ease-in-out'
-    });
-
-</script>
+        ScrollReveal().reveal('.reveal-efekti', { delay: 200, distance: '50px', origin: 'bottom', opacity: 0, duration: 1000, easing: 'ease-in-out' });
+        ScrollReveal().reveal('.reveal-tepeden', { delay: 200, distance: '50px', origin: 'top', opacity: 0, duration: 1000, easing: 'ease-in-out' });
+    </script>
 </body>
 </html>
