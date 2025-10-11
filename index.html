@@ -61,11 +61,17 @@
             justify-content: center;
             align-items: center;
         }
-        #showcase h1 {
-            font-size: 55px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px #000;
-        }
+       #showcase h1::after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: yanip-sonme 0.7s infinite;
+}
+
+@keyframes yanip-sonme {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
         #showcase p {
             font-size: 20px;
             text-shadow: 1px 1px 2px #000;
@@ -123,7 +129,7 @@
 
     <section id="showcase">
         <div class="container">
-            <h1>Okul ve Bölüm Projelerime Hoş Geldiniz</h1>
+            <h1 id="ana-baslik"></h1>
             <p>Bu sitede öğrenim hayatım boyunca yaptığım çalışmaları ve projeleri bulabilirsiniz.</p>
         </div>
     </section>
@@ -145,6 +151,22 @@
     <footer>
         <p>Copyright &copy; 2025, Alperen Vural</p>
     </footer>
+    <script>
+    const baslikElementi = document.getElementById('ana-baslik');
+    const metin = "Okul ve Bölüm Projelerime Hoş Geldiniz."; // Animasyonla yazılacak metin
+    let karakterIndex = 0;
+
+    function yaziYaz() {
+        if (karakterIndex < metin.length) {
+            baslikElementi.innerHTML += metin.charAt(karakterIndex);
+            karakterIndex++;
+            setTimeout(yaziYaz, 100); // Yazım hızı (milisaniye)
+        }
+    }
+
+    // Sayfa yüklendiğinde animasyonu başlat
+    document.addEventListener('DOMContentLoaded', yaziYaz);
+</script>
 
 </body>
 </html>
