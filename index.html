@@ -352,20 +352,7 @@
         duration: 1000,
         easing: 'ease-in-out'
     });
-    // Yetenek Barlarını Canlandırmak için
-        ScrollReveal().reveal('.yetenekler', {
-            delay: 200,
-            distance: '0px', // Barların kendisi hareket etmesin
-            opacity: 1,      // Sadece görünür olsunlar
-            beforeReveal: (el) => {
-                const barlar = el.querySelectorAll('.yetenek-seviyesi-doldur');
-                barlar.forEach(bar => {
-                    const hedefGenislik = bar.getAttribute('data-width');
-                    bar.style.transition = 'width 1.5s ease-in-out'; // Animasyon süresi ve şekli
-                    bar.style.width = hedefGenislik;
-                });
-            }
-        });    
+   
 </script>
 </body>
 </html>
