@@ -5,138 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alperen Vural | Kişisel Sayfa</title>
     <style>
-        /* Genel Stil Ayarları */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: #121212; /* Koyu arka plan */
-            color: #e0e0e0; /* Açık renk metin */
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 960px;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
-        }
-        /* Header (Üst Kısım) ve Navigasyon */
-        header {
-            background: #1f1f1f;
-            color: #fff;
-            padding: 1rem 0;
-            border-bottom: 3px solid #007bff; /* Mavi ayraç çizgisi */
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        /* Ana Giriş Ekranı (Showcase) */
-        #showcase {
-            min-height: 400px;
-            background: url('images/arkaplan.jpg') no-repeat center center/cover; /* Arka plan resmi için geçici bir görsel */
-            text-align: center;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-       #showcase h1::after {
-    content: '|';
-    margin-left: 5px;
-    opacity: 1;
-    animation: yanip-sonme 0.7s infinite;
-}
+    /* Genel Stil Ayarları */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background-color: #121212;
+        color: #e0e0e0;
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 960px;
+        margin: auto;
+        overflow: hidden;
+        padding: 0 20px;
+    }
 
-@keyframes yanip-sonme {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-        #showcase p {
-            font-size: 20px;
-            text-shadow: 1px 1px 2px #000;
-        }
-        /* Bölümler (Hakkımda, Projeler vb.) */
-        .bolum {
-            padding: 40px 0;
-            border-bottom: 1px solid #333;
-        }
-        .bolum h2 {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 20px;
-            color: #007bff;
-        }
-        /* Buton Stili */
-        .button {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        /* Footer (Alt Kısım) */
-        footer {
-            background: #1f1f1f;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            /* -- Hakkımda Bölümü Stilleri -- */
-.hakkimda-icerik {
+    /* Header (Üst Kısım) ve Navigasyon */
+    header {
+        background: #1f1f1f;
+        color: #fff;
+        padding: 1rem 0;
+        border-bottom: 3px solid #007bff;
+    }
+    header a {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    header ul {
+        padding: 0;
+        list-style: none;
+    }
+    header li {
+        display: inline;
+        padding: 0 20px 0 20px;
+    }
+    header #branding {
+        float: left;
+    }
+    header #branding h1 {
+        margin: 0;
+    }
+    header nav {
+        float: right;
+        margin-top: 10px;
+    }
+
+    /* Ana Giriş Ekranı (Showcase) */
+    #showcase {
+        position: relative;
+        min-height: 400px;
+        background: url('images/arkaplan.jpg') no-repeat center center/cover;
+        text-align: center;
+        color: #ffffff;
         display: flex;
-        align-items: flex-start; /* Sütunları yukarıdan hizala */
-        gap: 50px; /* Sütunlar arası boşluk */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    #showcase::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+    #showcase h1 {
+        font-size: 55px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px #000;
+    }
+    #showcase h1::after {
+        content: '|';
+        margin-left: 5px;
+        opacity: 1;
+        animation: yanip-sonme 0.7s infinite;
+    }
+    @keyframes yanip-sonme {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+    #showcase p {
+        font-size: 20px;
+        text-shadow: 1px 1px 2px #000;
+    }
+
+    /* Genel Bölüm Stilleri */
+    .bolum {
+        padding: 40px 0;
+        border-bottom: 1px solid #333;
+    }
+    .bolum h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: #007bff;
+    }
+
+    /* Hakkımda Bölümü Stilleri */
+    .hakkimda-icerik {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
         margin-top: 30px;
     }
     .profil-resmi {
-        flex: 0 0 200px; /* Fotoğraf sütununun genişliğini 200px'e sabitle */
+        flex: 0 0 200px;
         text-align: center;
     }
     .profil-resmi img {
-        max-width: 180px; /* Fotoğrafın maksimum genişliğini 180px yap */
-        border-radius: 50%; /* Resmi daire yap */
-        border: 5px solid #007bff; /* Mavi çerçeve ekle */
+        max-width: 180px;
+        border-radius: 50%;
+        border: 5px solid #007bff;
     }
     .hakkimda-metin {
-        flex: 1; /* Metin sütunu kalan tüm alanı doldursun */
+        flex: 1;
     }
 
-    /* -- Yetenek Barları Grid (Izgara) Yapısı -- */
+    /* Yetenek Barları Grid (Izgara) Yapısı */
     .yetenekler {
-        display: grid; /* Izgara sistemini aktive et */
-        grid-template-columns: repeat(2, 1fr); /* 2 adet eşit genişlikte sütun oluştur */
-        gap: 20px 40px; /* Satırlar arasına 20px, sütunlar arasına 40px boşluk koy */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 40px;
         margin-top: 30px;
     }
     .yetenekler h3 {
-        grid-column: 1 / -1; /* "Teknik Yetkinlikler" başlığını tüm sütunları kaplayacak şekilde uzat */
+        grid-column: 1 / -1;
         margin-bottom: 0;
     }
     .yetenek-kategorisi h4 {
@@ -166,15 +165,24 @@
         border-radius: 3px;
     }
 
-    /* Telefon gibi 768px'den dar ekranlar için responsive ayar */
+    /* Telefon Ekranları İçin Ayar */
     @media (max-width: 768px) {
         .hakkimda-icerik {
-            flex-direction: column; /* Sütunları alt alta getir */
-            align-items: center; /* Ortala */
+            flex-direction: column;
+            align-items: center;
         }
         .yetenekler {
-            grid-template-columns: 1fr; /* Izgarayı tek sütuna düşür */
+            grid-template-columns: 1fr;
         }
+    }
+
+    /* Footer (Alt Kısım) */
+    footer {
+        background: #1f1f1f;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
     }
 
 </style>
