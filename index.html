@@ -107,7 +107,7 @@
         color: #007bff;
     }
 
-    /* -- Hakkımda Bölümü YENİ DENGELİ Stilleri -- */
+/* -- Hakkımda Bölümü YENİ DENGELİ Stilleri -- */
 .hakkimda-icerik {
     display: flex;
     align-items: flex-start;
@@ -124,9 +124,9 @@
     border-radius: 20px; /* Yumuşak köşeli kare yapar */
     border: 5px solid #007bff;
 }
+}
  .profil-resmi .button {
     margin-top: 20px; /* Butonun üstüne 20 piksellik bir boşluk ekler */
-}       
 .hakkimda-metin {
     flex: 2.5; /* Metin ve yetenekler sütununu daha geniş yap */
 }
@@ -141,6 +141,13 @@
 .yetenekler h3 {
     grid-column: 1 / -1;
     margin-bottom: 0;
+}
+
+/* Telefon gibi 900px'den dar ekranlar için */
+@media (max-width: 900px) {
+    .yetenekler {
+        grid-template-columns: repeat(2, 1fr); /* Sütun sayısını 2'ye düşür */
+    }
 }
 
 /* Telefon gibi 900px'den dar ekranlar için */
