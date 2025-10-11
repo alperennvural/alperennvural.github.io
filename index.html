@@ -107,37 +107,45 @@
         color: #007bff;
     }
 
-    /* Hakkımda Bölümü Stilleri */
-    .hakkimda-icerik {
-        display: flex;
-        align-items: flex-start;
-        gap: 50px;
-        margin-top: 30px;
-    }
-    .profil-resmi {
-        flex: 0 0 200px;
-        text-align: center;
-    }
-    .profil-resmi img {
-        max-width: 180px;
-        border-radius: 50%;
-        border: 5px solid #007bff;
-    }
-    .hakkimda-metin {
-        flex: 1;
-    }
+    /* -- Hakkımda Bölümü YENİ DENGELİ Stilleri -- */
+.hakkimda-icerik {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 30px;
+}
+.profil-resmi {
+    flex: 1; /* Sütun genişliğini esnek yap */
+    max-width: 250px; /* Maksimum genişliği belirle */
+    text-align: center;
+}
+.profil-resmi img {
+    max-width: 100%; /* İçinde bulunduğu sütuna tamamen uysun */
+    border-radius: 20px; /* Yumuşak köşeli kare yapar */
+    border: 5px solid #007bff;
+}
+.hakkimda-metin {
+    flex: 2.5; /* Metin ve yetenekler sütununu daha geniş yap */
+}
 
-    /* Yetenek Barları Grid (Izgara) Yapısı */
+/* -- Yetenek Barları YENİ 3 SÜTUNLU Yapısı -- */
+.yetenekler {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 adet eşit genişlikte sütun oluştur */
+    gap: 20px 30px; /* Sütunlar arası boşluğu biraz azalt */
+    margin-top: 30px;
+}
+.yetenekler h3 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+/* Telefon gibi 900px'den dar ekranlar için */
+@media (max-width: 900px) {
     .yetenekler {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px 40px;
-        margin-top: 30px;
+        grid-template-columns: repeat(2, 1fr); /* Sütun sayısını 2'ye düşür */
     }
-    .yetenekler h3 {
-        grid-column: 1 / -1;
-        margin-bottom: 0;
-    }
+}
     .yetenek-kategorisi h4 {
         color: #007bff;
         margin-bottom: 15px;
