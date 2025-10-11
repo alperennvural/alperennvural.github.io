@@ -112,7 +112,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="reveal-tepeden">
         <div class="container">
             <div id="branding">
                 <h1><a href="#">Elektrik Elektronik Mühendisliği / Sakarya Üniversitesi</a></h1>
@@ -150,7 +150,7 @@
 
     <footer>
         <p>Copyright &copy; 2025, Alperen Vural</p>
-    </footer>
+    <footer class="reveal-efekti">
     <script>
     const baslikElementi = document.getElementById('ana-baslik');
     const metin = "Okul ve Bölüm Projelerime Hoş Geldiniz."; // Animasyonla yazılacak metin
@@ -170,12 +170,22 @@
 <script src="https://unpkg.com/scrollreveal"></script>
     <script>
     ScrollReveal().reveal('.reveal-efekti', {
-        delay: 200,      // Animasyon başlamadan önceki bekleme süresi (ms)
-        distance: '50px',// Elemanın ne kadar mesafeden geleceği
-        origin: 'bottom',// Animasyonun başlayacağı yön (alttan)
-        opacity: 0,      // Başlangıçtaki görünmezlik durumu
-        duration: 1000,  // Animasyonun ne kadar süreceği (ms)
-        easing: 'ease-in-out' // Animasyonun hız eğrisi
+        delay: 200,
+        distance: '50px',
+        origin: 'bottom',
+        opacity: 0,
+        duration: 1000,
+        easing: 'ease-in-out'
+    });
+
+    // 1. ADIMDA EKLEYECEĞİN YENİ KOD BU (Header için)
+    ScrollReveal().reveal('.reveal-tepeden', {
+        delay: 200,
+        distance: '50px',
+        origin: 'top', // Yönü 'top' olarak değiştirildi
+        opacity: 0,
+        duration: 1000,
+        easing: 'ease-in-out'
     });
 </script>
 </body>
