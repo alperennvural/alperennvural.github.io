@@ -351,7 +351,26 @@
         duration: 1000,
         easing: 'ease-in-out'
     });
-   
+    <script>
+    // Önceki çalışan animasyonlar
+    ScrollReveal().reveal('.reveal-efekti', { delay: 200, distance: '50px', origin: 'bottom', opacity: 0, duration: 1000, easing: 'ease-in-out' });
+    ScrollReveal().reveal('.reveal-tepeden', { delay: 200, distance: '50px', origin: 'top', opacity: 0, duration: 1000, easing: 'ease-in-out' });
+
+    // Yetenek Barlarını Canlandırmak için YENİ ve DÜZELTİLMİŞ KOD
+    ScrollReveal().reveal('.yetenekler', {
+        delay: 400, 
+        distance: '0px',
+        opacity: 1,
+        viewFactor: 0.5, 
+        beforeReveal: function (el) {
+            const barlar = el.querySelectorAll('.yetenek-seviyesi-doldur');
+            barlar.forEach(function(bar) {
+                const hedefGenislik = bar.getAttribute('data-width');
+                bar.style.transition = 'width 1.5s ease-in-out 0.5s'; 
+                bar.style.width = hedefGenislik;
+            });
+        }
+    });
 </script>
 </body>
 </html>
